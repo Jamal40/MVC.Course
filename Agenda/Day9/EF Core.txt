@@ -1,0 +1,20 @@
+EF Core meaning 
+Code First 
+Attributes 
+Provider and connection string 
+Creating object 
+Perform Crud
+Writing Some Queries 
+Tracking
+Migrations
+Snapshot 
+
+Relations=> 
+Get Data with Relations => Include
+Adding with One To Many
+Adding with Many To Many 
+
+Edit with One to Many
+Edit with many to many
+Database First
+Delete Cascade

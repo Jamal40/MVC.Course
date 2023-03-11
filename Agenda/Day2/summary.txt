@@ -1,0 +1,28 @@
+=> Records
+=> Required .Net 7 Feature
+=> Http Request Structure
+=> Model binding
+=> Sending Params
+=> Routing => Routing Constraints
+=> Methods
+=> Forms 
+=> Models 
+=> Post => Get Pattern
+=> ViewBag, ViewData
+=> MultiSelect MultipleCheckbboxes
+=> TagHelpers vs HtmlHelpers
+    =>Form
+        =>Input text/number/password/email/date
+        =>Select 
+        =>Boolean
+        =>Multiple Select
+        =>Enum
+        =>Label
+        =>Display =>
+    => Anchor TagHelper
+
+
+
+
+
+

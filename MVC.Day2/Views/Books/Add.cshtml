@@ -1,0 +1,90 @@
+﻿@model AddBookVM;
+<a asp-action="Index" asp-route-key="value">Go To listing</a>
+
+<form asp-action="Add" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-control">
+        <label asp-for="UserEmail"></label>
+        <input asp-for="UserEmail" />
+        <span class="d-block text-danger" asp-validation-for="UserEmail"></span>
+    </div>
+
+    <div class="form-control">
+        <label asp-for="UserPassword"></label>
+        <input asp-for="UserPassword" />
+        <span class="d-block text-danger" asp-validation-for="UserPassword"></span>
+    </div>
+
+    <div class="form-control">
+        <label asp-for="ShouldBeReviewd"></label>
+        <input asp-for="ShouldBeReviewd" />
+    </div>
+
+    <div class="form-control">
+        <label asp-for="CountryId"></label>
+        <select asp-for="CountryId" asp-items="AddBookVM.CountriesList"></select>
+    </div>
+
+    <div class="form-control">
+        <label asp-for="Status"></label>
+        <select asp-for="Status" asp-items="Html.GetEnumSelectList<BookStatuses>()"></select>
+    </div>
+
+    <div class="form-control">
+        <label asp-for="Reviewers"></label>
+        <select asp-for="Reviewers" asp-items="AddBookVM.ReviewersList"></select>
+    </div>
+
+    <div class="form-control">
+        <label>Reveiwers</label>
+        @foreach (var item in AddBookVM.ReviewersList)
+        {
+            <div>
+                <label for="Reviewer_@item.Value">@item.Text</label>
+                <input class="reviewers-checkbox" id="Reviewer_@item.Value" type="checkbox" data-value="@item.Value" />
+            </div>
+        }
+    </div>
+    <input type="hidden" name="ReviewersString" value="1,2,3" />
+    <button class="btn btn-dark">Submit</button>
+</form>
+
+
+
+@section scripts
+    {
+    <script>
+
+        let reviewers = [];
+        const checkBoxes = document.querySelectorAll(".reviewers-checkbox");
+
+        for (let box of checkBoxes) {
+            box.addEventListener("change", (e) => {
+                if (e.target.checked) {
+                    reviewers.push(e.target.getAttribute("data-value"));
+                    console.log(reviewers);
+                    return;
+                }
+                reviewers = reviewers.filter(r => r !== e.target.getAttribute("data-value"));
+                console.log(reviewers);
+            })
+        }
+
+        const form = document.querySelector("form");
+        const reviewersInput = document.querySelector("input[name='ReviewersString']");
+
+        form.addEventListener("submit", (e) => {
+            reviewersInput.value = reviewers.join(",");
+            console.log(reviewersInput.value);
+        })
+
+                //On check box change =>
+                //checked =>  Add value to array
+                //unchecked =>  remove value to array
+
+                //On Submit => Array => string comma sparated
+                //assign result string to the hidden input field
+
+    </script>
+}

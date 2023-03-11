@@ -1,0 +1,10 @@
+1. Validate a file has been sent
+2. Validate size of the image
+3. Detect the extension of the file
+4. Validate the extension of the file
+5. Genrate a new random name for the file, but keeping the extension => [NewName][EXT]
+6. Get Folder Path that we will save the file in
+7. Generate the full path for the image [ImagesFolder][NewName][EXT]
+8. Save the image at this path
+
+=> Optional => Allowed Size, Extensions, ImagesFolderPath are configurations

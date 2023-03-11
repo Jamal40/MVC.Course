@@ -1,0 +1,14 @@
+=> How web works?
+=> Types of web sites?
+=> MVC?
+=> IoC
+=> ASP => ASP MVC
+=> ASP In Action
+=> Create Controller
+=> Basic Routing
+=> Adding View
+=> Adding Model
+=> Razor Engine
+
+
+//draw in one hour (x in y hour)(blacklist)(only once)(get another customer)

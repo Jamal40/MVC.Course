@@ -1,0 +1,19 @@
+﻿@using MVC.Day2.Again.Models.Domain;
+@model List<Author>;
+
+@foreach (var item in Model)
+{
+    foreach (var prop in item.GetType().GetProperties())
+    {
+        <p>@prop.Name: @prop.GetValue(item) </p>
+    }
+    <h4>Awards:</h4>
+    <ul>
+        @foreach (var award in item.Awards)
+        {
+            <li>@award</li>
+        }
+    </ul>
+    <hr />
+    <hr />
+}

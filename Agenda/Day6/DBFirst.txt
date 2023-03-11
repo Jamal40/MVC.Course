@@ -1,0 +1,7 @@
+
+Scaffold-DbContext 
+'Server=.; Database=Northwind; Trusted_Connection=true; Encrypt=false;' 
+-ContextDir Data 
+-OutputDir Models 
+-DataAnnotations 
+Microsoft.EntityFrameworkCore.SqlServer

@@ -1,0 +1,69 @@
+﻿@model List<Book>;
+@using MVC.Day._1.Controllers;
+
+@{
+    Layout = "_MyLayOut";
+    var text = "Hello, this is as C# string";
+    var books = Model;
+}
+
+<h1>Hello Everyone!</h1>
+<p>Take a look at this magic</p>
+<p>@@This is not C#</p>
+<strong>@text</strong>
+<br />
+<strong>@(text + ", concatenatedText")</strong>
+
+<p>Calling Functions:</p>
+<p>@(BooksController.GetMeTheType<double>())</p>
+<p>@Html.Raw("<strong>Hello</strong>")</p>
+
+@{
+    void RenderName(string name)
+    {
+        <p>Name: <strong>@name</strong></p>
+    }
+
+    var myNumber = 150.5;
+    var value = 2;
+}
+<p>Your number is: @myNumber</p>
+
+<i>
+    @{
+        RenderName("Hello");
+    }
+</i>
+
+
+<input type="checkbox" checked="@true" name="true" />
+<input type="checkbox" checked="@false" name="false" />
+
+@if (value % 2 == 0)
+{
+    <p>The value was even.</p>
+}
+else
+{
+    <p>Tha value is odd</p>
+}
+
+@switch (value)
+{
+    case 1:
+        <p>Hello One</p>
+        break;
+    case 2:
+        <h2>Hello Two</h2>
+        break;
+    default:
+        <h6>Hello Six</h6>
+        break;
+}
+
+@foreach (var book in books)
+{
+    <pre style="color:darkred;">@book.ToString()</pre>
+}
+
+@Html.Raw(books[0].ImageMarkup)

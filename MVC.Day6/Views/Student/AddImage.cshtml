@@ -1,0 +1,22 @@
+﻿@model StudentImage;
+
+<form asp-action="AddImage" enctype="multipart/form-data" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <dl>
+        <dt>
+            <label asp-for="Image"></label>
+        </dt>
+        <dd>
+            <input asp-for="Image" type="file">
+        </dd>
+    </dl>
+    <dl>
+        <dt>
+            <label asp-for="Id"></label>
+        </dt>
+        <dd>
+            <input asp-for="Id">
+        </dd>
+    </dl>
+    <button class="btn btn-primary">Submit</button>
+</form>

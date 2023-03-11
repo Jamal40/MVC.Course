@@ -1,0 +1,13 @@
+﻿@model Author;
+
+<form action="/Books/EditAuthor" method="post">
+    <div class="form-control">
+        <input value="@Model.Name" name="Name" type="text" placeholder="Auther's name'" />
+    </div>
+
+    <div class="form-control">
+        <input value="@Model.NumberOfBooks" name="NumberOfBooks" type="number" placeholder="Number of books" />
+    </div>
+
+    <button>Submit</button>
+</form>

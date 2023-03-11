@@ -1,0 +1,42 @@
+﻿@{
+    Type type = Model.GetType().GetGenericArguments()[0];
+    var list = Model;
+    var props = type.GetProperties().ToList();
+}
+
+<a asp-action="Add">Add a new item</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">image</th>
+            @foreach (var prop in props)
+            {
+                <th scope="col">@prop.Name</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < list.Count; i++)
+        {
+            var item = list[i];
+            <tr>
+                <th scope="row">@i</th>
+                <th scope="row">
+                    <figure class="figure">
+                        <img src="https://picsum.photos/500" class="figure-img img-fluid rounded" alt="random text">
+                        <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                    </figure>
+                </th>
+
+                @foreach (var prop in props)
+                {
+                    <th scope="col">@prop.GetValue(item)</th>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

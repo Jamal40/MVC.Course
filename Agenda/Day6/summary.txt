@@ -1,0 +1,21 @@
+=> Server Side Validation
+=> Client Side Validation 
+=> Partial Views
+=> Configuration
+=> Adding JS Code
+
+<===> ASP <===>
+
+=> Sending API Request
+
+=> Files
+
+
+
+=> CSS bundling
+=> state managament
+=> caching 
+=> calling APIs
+=> Handling file and images
+=> options and configurations 
+=> Localization

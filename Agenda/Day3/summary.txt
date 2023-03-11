@@ -1,0 +1,7 @@
+=> Routing 
+=> Model Binding 
+=> Adding Validations
+=> Server Side Validation
+=> Client Side Validation
+=> Implementing Crud
+=> Partial Views
